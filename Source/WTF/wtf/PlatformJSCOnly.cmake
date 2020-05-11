@@ -4,6 +4,7 @@ list(APPEND WTF_SOURCES
 
 if (WIN32)
     list(APPEND WTF_SOURCES
+        text/win/StringWin.cpp
         text/win/TextBreakIteratorInternalICUWin.cpp
 
         win/CPUTimeWin.cpp
@@ -13,7 +14,6 @@ if (WIN32)
         win/MainThreadWin.cpp
         win/OSAllocatorWin.cpp
         win/PathWalker.cpp
-        win/ThreadSpecificWin.cpp
         win/ThreadingWin.cpp
     )
     list(APPEND WTF_PUBLIC_HEADERS
