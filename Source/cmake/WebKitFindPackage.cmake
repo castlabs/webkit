@@ -114,22 +114,22 @@ macro(find_package package)
             )
         endif ()
     elseif ("${package}" STREQUAL "ICU")
-        if (ICU_FOUND AND NOT TARGET ICU::data)
-            add_library(ICU::data UNKNOWN IMPORTED)
-            set_target_properties(ICU::data PROPERTIES
+        if (ICU_FOUND AND NOT TARGET ICU::dt)
+            #add_library(ICU::dt UNKNOWN IMPORTED)
+            set_target_properties(ICU::dt PROPERTIES
                 IMPORTED_LOCATION "${ICU_DATA_LIBRARY}"
                 INTERFACE_INCLUDE_DIRECTORIES "${ICU_INCLUDE_DIRS}"
                 IMPORTED_LINK_INTERFACE_LANGUAGES "CXX"
             )
 
-            add_library(ICU::i18n UNKNOWN IMPORTED)
+            #add_library(ICU::i18n UNKNOWN IMPORTED)
             set_target_properties(ICU::i18n PROPERTIES
                 IMPORTED_LOCATION "${ICU_I18N_LIBRARY}"
                 INTERFACE_INCLUDE_DIRECTORIES "${ICU_INCLUDE_DIRS}"
                 IMPORTED_LINK_INTERFACE_LANGUAGES "CXX"
             )
 
-            add_library(ICU::uc UNKNOWN IMPORTED)
+            #add_library(ICU::uc UNKNOWN IMPORTED)
             set_target_properties(ICU::uc PROPERTIES
                 IMPORTED_LOCATION "${ICU_UC_LIBRARY}"
                 INTERFACE_INCLUDE_DIRECTORIES "${ICU_INCLUDE_DIRS}"
